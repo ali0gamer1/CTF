@@ -91,6 +91,24 @@ uintptr_t findDMAaddr(HANDLE hproc, uintptr_t ptr, std::vector<unsigned int> off
 }
 
 
+void findHWNDprocid(DWORD dwProcessID, HWND & hwnd)
+{
+    // find all hWnds (vhWnds) associated with a process id (dwProcessID)
+    HWND hCurWnd = NULL;
+    do
+    {
+        hCurWnd = FindWindowEx(NULL, hCurWnd, NULL, NULL);
+        DWORD dwProcID = 0;
+        GetWindowThreadProcessId(hCurWnd, &dwProcID);
+        if (dwProcID == dwProcessID)
+        {
+            hwnd = hCurWnd;
+            return;
+        }
+    } while (hCurWnd != NULL);
+}
+
+
 void patch(BYTE* dst, BYTE* src, unsigned int size, HANDLE hprocess)
 {
     DWORD protect;
@@ -118,17 +136,13 @@ int main()
 
     uintptr_t dynamicptr = modulebase + 0x1a4b4;
 
-    /*
-    std::vector<unsigned int> healthvec;
-    healthvec.push_back(0xf8);
+    HWND hCurWnd = NULL;
+    
+    findHWNDprocid(procid, hCurWnd);
 
-    uintptr_t healthaddr = findDMAaddr(hprocess, dynamicptr, healthvec);
-
-    ReadProcessMemory(hprocess, (BYTE*)healthaddr, &temphealth, sizeof(health), 0);
-    ReadProcessMemory(hprocess, (BYTE*)ammoaddr, &tempammo, sizeof(ammo), 0);
-    WriteProcessMemory(hprocess, (BYTE*)ammoaddr, &newammo, sizeof(newammo), 0);*/
 
     bool velocity_hack = false;
+    bool fly_hack = false;
     bool collision_hack = false;
     while (1)
     {
@@ -139,17 +153,14 @@ int main()
 
             if (velocity_hack)
             {
-                std::vector<unsigned int> velocity;
-                velocity.push_back(0x2c);
-                uintptr_t velocity_addr = findDMAaddr(hprocess, dynamicptr, velocity);
+               
+                uintptr_t velocity_addr = findDMAaddr(hprocess, dynamicptr, {0x2c});
                 static int new_vel  = 0;
                 WriteProcessMemory(hprocess, (BYTE*)velocity_addr, &new_vel, sizeof(new_vel), 0);
                 patch((BYTE*)(modulebase + 0x2fe0), (BYTE*)"\x90\x90\x90", 3, hprocess);
             }
             else
             {
-                static int new_vel = 5;
-                WriteProcessMemory(hprocess, (BYTE*)velocity_addr, &new_vel, sizeof(new_vel), 0);
                 patch((BYTE*)(modulebase + 0x2fe0), (BYTE*)"\xff\x46\x2c", 3, hprocess);
             }
         }
@@ -168,6 +179,35 @@ int main()
                 patch((BYTE*)(modulebase + 0x30BF), (BYTE*)"\x8d\x45\xcc\x50\x8d\x45\xdc\x89\x55\xcc\x50\x8d\x45\xac\xc7\x45\xd0\x00\x00\x00\x00\x50\x89\x55\xbc\x0f\x11\x45\xac\xff\x15\x80\x21\x41\x00\x85\xc0\x0f\x85\xcd\x00\x00\x00\x8d\x45\xbc\x50\x8d\x45\xdc\x50\x8d\x45\xac\x50\xff\x15\x80\x21\x41\x00", 61, hprocess);
             }
         }
+
+        if (GetAsyncKeyState(VK_CONTROL) & 1) //fly hack (control with mouse)
+            fly_hack = !fly_hack;
+        
+
+        if (fly_hack)
+        {
+            static int birdx, birdy;
+
+            static uintptr_t xpos = findDMAaddr(hprocess, dynamicptr, { 0x18 });
+            static uintptr_t ypos = findDMAaddr(hprocess, dynamicptr, { 0x1c });
+
+            if (hCurWnd != NULL)
+            {
+                POINT p;
+                GetCursorPos(&p);
+                ScreenToClient(hCurWnd, &p);
+                p.y = p.y - 285;
+                p.x = p.x - 110;
+                WriteProcessMemory(hprocess, (BYTE*)xpos, &p.x, sizeof(p.x), 0);
+                WriteProcessMemory(hprocess, (BYTE*)ypos, &p.y, sizeof(p.y), 0);
+
+
+            }
+            
+
+        }
+   
+
 
     }
 
