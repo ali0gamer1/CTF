@@ -56,7 +56,7 @@ uintptr_t get_module_base_addr(DWORD procID, const char* modname)
             {
                 char test[260];
                 sprintf_s(test, "%ws", modentry.szModule);
-                if (!strcmp(test, modname))
+                if (!_stricmp(test, modname))
                 {
                     modbaseadr = (uintptr_t)modentry.modBaseAddr;
                     break;
@@ -180,6 +180,13 @@ int main()
             }
         }
 
+        if (GetAsyncKeyState(VK_F1) & 1)
+        {
+            static int scooreee = 999;
+            static uintptr_t scoreaddr = findDMAaddr(hprocess, dynamicptr, { 0x94 });
+            WriteProcessMemory(hprocess, (BYTE*)scoreaddr, &scooreee, sizeof(scooreee), 0);
+        }
+
         if (GetAsyncKeyState(VK_CONTROL) & 1) //fly hack (control with mouse)
             fly_hack = !fly_hack;
         
@@ -197,18 +204,16 @@ int main()
                 GetCursorPos(&p);
                 ScreenToClient(hCurWnd, &p);
                 p.y = p.y - 285;
-                p.x = p.x - 110;
+                p.x = p.x - 105;
                 WriteProcessMemory(hprocess, (BYTE*)xpos, &p.x, sizeof(p.x), 0);
                 WriteProcessMemory(hprocess, (BYTE*)ypos, &p.y, sizeof(p.y), 0);
-
-
             }
             
 
         }
    
 
-
+        Sleep(10);
     }
 
     std::cin.get();
