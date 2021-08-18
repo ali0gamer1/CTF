@@ -5,3 +5,4 @@ Key map:<br/>
 C -> Collision hack<br/>
 V -> Velocity hack<br/>
 CTRL -> Control das vogel(bird :D) with your mouse
+F1 -> Score hack (get flag)
