@@ -13,7 +13,10 @@ flag = "I dont know lol"
 count =  0
 jmp_flag = False
 jmp_addr = 0
+inp_flag = False
+the_list = []
 while execute:
+
     count += 1
     if pc >= 1490:
         print("End of program")
@@ -22,7 +25,10 @@ while execute:
     if sp < 0:
         print("Stack underflow")
         break
-    if jmp_flag and (pc == jmp_addr or count - 1 == jmp_addr):
+
+    
+
+    if jmp_flag and (pc == jmp_addr):
         jmp_flag = False
         print("ok")
     #This is a test and doesn't need improvment
@@ -46,46 +52,53 @@ while execute:
         print(jmp_addr)
         continue
     
-    if "skip " in cmd and not jmp_flag:
-        jmp_flag = True
-        jmp_addr = int(cmd[5:])
-        print(jmp_addr)
-        continue
+
     
     if program[pc] == "01":
         execute = 0
         print("Exit")
+        print(the_list)
         continue
 
     if program[pc] == "81":
         value = int(program[pc + 2] + program[pc + 1], 16)
         stack[sp] = value
+        if inp_flag:
+            the_list.append(f"push {value}")
         sp += 1
         pc += 3
         continue
 
     elif program[pc] == "80":
         stack[sp] = int(program[pc + 1],16)
+        if inp_flag:
+            the_list.append(f"push {stack[sp]}")
         sp += 1
         pc += 2
         continue
     
     elif program[pc] == "30": #Unconditional jump
+        if inp_flag:
+            the_list.append(f"jmp {stack[sp - 1]}")
         pc = stack[sp - 1]
         sp -= 1
         continue
     
-    elif program[pc] == "10":
+    elif program[pc] == "10": #Copy
         temp_sp = sp
         temp_sp2 = sp - 1
         sp += 1
         stack[temp_sp] = stack[temp_sp2]
         pc += 1
+        if inp_flag:
+            the_list.append(f"copy_to_top_of_the_stack")
         continue
 
     elif program[pc] == "11":
         sp -= 1
         pc += 1
+        if inp_flag:
+            the_list.append(f"dec sp")
         continue
 
     elif program[pc] == "12": #Add 
@@ -95,6 +108,8 @@ while execute:
         stack[temp_sp - 2] = temp_var + temp_var2
         sp -= 1
         pc += 1
+        if inp_flag:
+            the_list.append(f"add [sp - 2], [sp - 1]")
         continue
 
     elif program[pc] == "13": #Subtract 
@@ -104,23 +119,30 @@ while execute:
         stack[temp_sp - 2] = temp_var2 - temp_var
         sp -= 1
         pc += 1
+        if inp_flag:
+            the_list.append(f"sub [sp - 2], [sp - 1]")
         continue
 
     elif program[pc] == "14": #swap
         temp = stack[temp_sp - 2]
         stack[temp_sp - 2] = stack[temp_sp - 1]
         stack[temp_sp - 1] = temp
+        if inp_flag:
+            the_list.append(f"swap [sp - 2], [sp - 1]")
         pc += 1
         continue
 
     elif program[pc] == "c0":
-        print(count)
+        inp_flag = True
+        print(pc)
         inp = input('Enter a value (len = 1)')
         if len(inp) != 1:
             continue
         stack[sp] = ord(inp)
         sp += 1
         pc += 1
+        if inp_flag:
+            the_list.append(f"input")
     
     elif program[pc] == "31": #Conditional jmp
         cond = stack[sp - 2]
@@ -130,18 +152,22 @@ while execute:
         else:
             pc += 1
 
+        if inp_flag:
+            the_list.append(f"jmp_ if_[sp - 2] == 0 {addr}")
         sp -= 2
     
     elif program[pc] == "c1":
         val = chr(stack[sp - 1])
         if val not in string.ascii_letters + string.punctuation:
-            val = f"Value: '{hex(stack[sp - 1])}'"
+            val = f"Value = '{hex(stack[sp - 1])}'"
         else:
-            val = f"Value: '{chr(stack[sp - 1])}'"
+            val = f"Value = '{chr(stack[sp - 1])}'"
 
         print(f"Function call with param: {val}")
         sp -= 1
         pc += 1
+        if inp_flag:
+            the_list.append(f"call({val})")
 
     else:
         print(f"COUNT: {count}")
