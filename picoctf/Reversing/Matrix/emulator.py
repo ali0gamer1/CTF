@@ -64,7 +64,7 @@ while execute:
         value = int(program[pc + 2] + program[pc + 1], 16)
         stack[sp] = value
         if inp_flag:
-            the_list.append(f"push {value}")
+            the_list.append(f"{pc}:\tpush {value}")
         sp += 1
         pc += 3
         continue
@@ -72,14 +72,14 @@ while execute:
     elif program[pc] == "80":
         stack[sp] = int(program[pc + 1],16)
         if inp_flag:
-            the_list.append(f"push {stack[sp]}")
+            the_list.append(f"{pc}:\tpush {stack[sp]}")
         sp += 1
         pc += 2
         continue
     
     elif program[pc] == "30": #Unconditional jump
         if inp_flag:
-            the_list.append(f"jmp {stack[sp - 1]}")
+            the_list.append(f"{pc}:\tjmp {stack[sp - 1]}")
         pc = stack[sp - 1]
         sp -= 1
         continue
@@ -91,14 +91,14 @@ while execute:
         stack[temp_sp] = stack[temp_sp2]
         pc += 1
         if inp_flag:
-            the_list.append(f"copy_to_top_of_the_stack")
+            the_list.append(f"{pc - 1}:\tcopy_to_top_of_the_stack")
         continue
 
     elif program[pc] == "11":
         sp -= 1
         pc += 1
         if inp_flag:
-            the_list.append(f"dec sp")
+            the_list.append(f"{pc - 1}:\tdec sp")
         continue
 
     elif program[pc] == "12": #Add 
@@ -109,7 +109,7 @@ while execute:
         sp -= 1
         pc += 1
         if inp_flag:
-            the_list.append(f"add [sp - 2], [sp - 1]")
+            the_list.append(f"{pc - 1}:\tadd [sp - 2], [sp - 1]")
         continue
 
     elif program[pc] == "13": #Subtract 
@@ -120,7 +120,7 @@ while execute:
         sp -= 1
         pc += 1
         if inp_flag:
-            the_list.append(f"sub [sp - 2], [sp - 1]")
+            the_list.append(f"{pc - 1}:\tsub [sp - 2], [sp - 1]")
         continue
 
     elif program[pc] == "14": #swap
@@ -128,7 +128,7 @@ while execute:
         stack[temp_sp - 2] = stack[temp_sp - 1]
         stack[temp_sp - 1] = temp
         if inp_flag:
-            the_list.append(f"swap [sp - 2], [sp - 1]")
+            the_list.append(f"{pc}:\tswap [sp - 2], [sp - 1]")
         pc += 1
         continue
 
@@ -142,18 +142,21 @@ while execute:
         sp += 1
         pc += 1
         if inp_flag:
-            the_list.append(f"input")
+            the_list.append(f"{pc - 1}:\tinput")
     
     elif program[pc] == "31": #Conditional jmp
         cond = stack[sp - 2]
         addr = stack[sp - 1]
+
+        if inp_flag:
+            the_list.append(f"{pc}:\tjmp_ if_[sp - 2] == 0 {addr}")
+            
         if cond == 0:
             pc = addr
         else:
             pc += 1
 
-        if inp_flag:
-            the_list.append(f"jmp_ if_[sp - 2] == 0 {addr}")
+        
         sp -= 2
     
     elif program[pc] == "c1":
@@ -167,7 +170,7 @@ while execute:
         sp -= 1
         pc += 1
         if inp_flag:
-            the_list.append(f"call({val})")
+            the_list.append(f"{pc - 1}:\tcall({val})")
 
     else:
         print(f"COUNT: {count}")
