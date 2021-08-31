@@ -1,2 +1,2 @@
-#PicoCTF writeups
+# PicoCTF writeups
 lol ?
