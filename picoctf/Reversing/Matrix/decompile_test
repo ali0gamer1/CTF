@@ -1,0 +1,1001 @@
+store_short('u','\x00') #81
+store_char('\x00') #80
+store_char('\x0a') #80
+store_char('?') #80
+store_char('e') #80
+store_char('v') #80
+store_char('i') #80
+store_char('l') #80
+store_char('a') #80
+store_char('\x20') #80
+store_char('t') #80
+store_char('u') #80
+store_char('o') #80
+store_char('\x20') #80
+store_char('t') #80
+store_char('i') #80
+store_char('\x20') #80
+store_char('e') #80
+store_char('k') #80
+store_char('a') #80
+store_char('m') #80
+store_char('\x20') #80
+store_char('u') #80
+store_char('o') #80
+store_char('y') #80
+store_char('\x20') #80
+store_char('n') #80
+store_char('a') #80
+store_char('C') #80
+store_char('\x0a') #80
+store_char('X') #80
+store_char('\x20') #80
+store_char('I') #80
+store_char('\x20') #80
+store_char('R') #80
+store_char('\x20') #80
+store_char('T') #80
+store_char('\x20') #80
+store_char('A') #80
+store_char('\x20') #80
+store_char('M') #80
+store_char('\x20') #80
+store_char('e') #80
+store_char('h') #80
+store_char('t') #80
+store_char('\x20') #80
+store_char('o') #80
+store_char('t') #80
+store_char('\x20') #80
+store_char('e') #80
+store_char('m') #80
+store_char('o') #80
+store_char('c') #80
+store_char('l') #80
+store_char('e') #80
+store_char('W') #80
+store_short(';','\x01') #81
+jmp
+store_char('\x01') #80
+store_char('\x01') #80
+store_char('\x00') #80
+c0
+10
+store_char('u') #80
+13
+store_short('\xa0','\x00') #81
+31
+10
+store_char('d') #80
+13
+store_short('\xaa','\x00') #81
+31
+10
+store_char('l') #80
+13
+store_short('\xb4','\x00') #81
+31
+10
+store_char('r') #80
+13
+store_short('\xc0','\x00') #81
+31
+store_short('\xfb','\x00') #81
+jmp
+11
+20
+store_char('\x01') #80
+13
+21
+store_short('\xcc','\x00') #81
+jmp
+11
+20
+store_char('\x01') #80
+12
+21
+store_short('\xcc','\x00') #81
+jmp
+11
+20
+20
+store_char('\x01') #80
+13
+21
+21
+store_short('\xcc','\x00') #81
+jmp
+11
+20
+20
+store_char('\x01') #80
+12
+21
+21
+store_short('\xcc','\x00') #81
+jmp
+20
+20
+store_short('\xda','\x00') #81
+21
+10
+20
+store_char('\x10') #80
+store_short('G','\x01') #81
+jmp
+14
+10
+20
+12
+21
+14
+21
+14
+21
+14
+20
+store_short('\xef','\x00') #81
+21
+store_char('\x02') #80
+store_short('a','\x01') #81
+jmp
+store_short('{','\x00') #81
+14
+store_short('t','\x01') #81
+12
+jmp
+store_char('\x00') #80
+01
+store_short('\x38','\x01') #81
+store_char('\x00') #80
+store_char('\x0a') #80
+store_char('.') #80
+store_char('e') #80
+store_char('u') #80
+store_char('r') #80
+store_char('g') #80
+store_char('\x20') #80
+store_char('a') #80
+store_char('\x20') #80
+store_char('y') #80
+store_char('b') #80
+store_char('\x20') #80
+store_char('n') #80
+store_char('e') #80
+store_char('t') #80
+store_char('a') #80
+store_char('e') #80
+store_char('\x20') #80
+store_char('e') #80
+store_char('r') #80
+store_char('e') #80
+store_char('w') #80
+store_char('\x20') #80
+store_char('u') #80
+store_char('o') #80
+store_char('Y') #80
+store_short(';','\x01') #81
+jmp
+store_char('\x01') #80
+01
+10
+store_short('E','\x01') #81
+31
+c1
+store_short(';','\x01') #81
+jmp
+11
+jmp
+store_char('\x00') #80
+20
+20
+10
+store_short('[','\x01') #81
+31
+store_char('\x01') #80
+13
+21
+10
+21
+12
+store_short('I','\x01') #81
+jmp
+11
+21
+11
+21
+14
+jmp
+10
+store_short('q','\x01') #81
+31
+store_char('\x01') #80
+13
+20
+10
+12
+21
+store_short('a','\x01') #81
+jmp
+11
+14
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\x7f','\x05') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\x7f','\x05') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('t','\x05') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('t','\x05') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\x7f','\x05') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('t','\x05') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('t','\x05') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('t','\x05') #81
+jmp
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+jmp
+00
+00
+00
+jmp
+00
+00
+00
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+store_short('\x85','\x05') #81
+jmp
+store_short('\xfb','\x00') #81
+jmp
+20
+10
+store_short('\xfb','\x00') #81
+31
+store_char('\x01') #80
+13
+21
+jmp
+20
+store_char('\x01') #80
+12
+21
+jmp
+11
+11
+11
+11
+store_short('\xce','\x05') #81
+store_char('\x00') #80
+store_char('\x0a') #80
+store_char('!') #80
+store_char('t') #80
+store_char('i') #80
+store_char('\x20') #80
+store_char('e') #80
+store_char('d') #80
+store_char('a') #80
+store_char('m') #80
+store_char('\x20') #80
+store_char('u') #80
+store_char('o') #80
+store_char('y') #80
+store_char('\x20') #80
+store_char(',') #80
+store_char('s') #80
+store_char('n') #80
+store_char('o') #80
+store_char('i') #80
+store_char('t') #80
+store_char('a') #80
+store_char('l') #80
+store_char('u') #80
+store_char('t') #80
+store_char('a') #80
+store_char('r') #80
+store_char('g') #80
+store_char('n') #80
+store_char('o') #80
+store_char('C') #80
+store_short(';','\x01') #81
+jmp
+store_short('\xf8','\x00') #81
+jmp
